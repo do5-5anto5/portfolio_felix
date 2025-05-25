@@ -9,4 +9,20 @@ class AppTextStyles {
       color: Colors.white,
     );
   }
+
+  static TextStyle montserratStyle() {
+    return GoogleFonts.montserrat(
+      color: Colors.white,
+      fontWeight: FontWeight.w800,
+      fontSize: 24,
+    );
+  }
+
+  static TextStyle headingStyles() {
+    return GoogleFonts.rubikMoonrocks(
+      color: Colors.white,
+      fontSize: 36,
+      letterSpacing: 2,
+    );
+  }
 }
