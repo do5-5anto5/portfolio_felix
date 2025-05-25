@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTextStyles {
-  static TextStyle headerTextStyle() {
+  static TextStyle headerTextStyle({Color color = Colors.white}) {
     return GoogleFonts.signikaNegative(
       fontSize: 18,
       fontWeight: FontWeight.w600,
-      color: Colors.white,
+      color: color,
     );
   }
 
@@ -18,20 +18,20 @@ class AppTextStyles {
     );
   }
 
-  static TextStyle headingStyles() {
+  static TextStyle headingStyles({double fontSize = 36, color = Colors.white}) {
     return GoogleFonts.rubikMoonrocks(
-      color: Colors.white,
-      fontSize: 36,
-      letterSpacing: 2,
+      color:color,
+      fontSize: fontSize,
+      letterSpacing: 1.5,
     );
   }
 
   static TextStyle normalStyle() {
-    return GoogleFonts.signikaNegative(
+    return TextStyle(
       fontWeight: FontWeight.w500,
       fontSize: 17,
       color: Colors.white,
-      letterSpacing: 1,
+      letterSpacing: 1.7,
     );
   }
 }
