@@ -47,7 +47,10 @@ class HomePage extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Olá, sou ', style: AppTextStyles.montserratStyle()),
+                    Text(
+                      'Olá, sou ',
+                      style: AppTextStyles.montserratStyle(color: Colors.white),
+                    ),
                     Constants.sizedBox(height: 15),
                     Text('Neemias Felix', style: AppTextStyles.headingStyles()),
                     Constants.sizedBox(height: 15),
@@ -55,17 +58,44 @@ class HomePage extends StatelessWidget {
                       children: [
                         Text(
                           'E presto serviços em ',
-                          style: AppTextStyles.montserratStyle(),
+                          style: AppTextStyles.montserratStyle(
+                            color: Colors.white,
+                          ),
                         ),
-                        AnimatedTextKit(animatedTexts: [
-                          TyperAnimatedText('Dry Wall',
-                          textStyle: AppTextStyles.montserratStyle()),
-                          TyperAnimatedText('Steel Frame Design',
-                              textStyle: AppTextStyles.montserratStyle()),
-                          TyperAnimatedText('Gesso',
-                              textStyle: AppTextStyles.montserratStyle()),
-                        ]),
+                        AnimatedTextKit(
+                          animatedTexts: [
+                            TyperAnimatedText(
+                              'Dry Wall',
+                              textStyle: AppTextStyles.montserratStyle(
+                                color: Colors.lightBlue,
+                              ),
+                            ),
+                            TyperAnimatedText(
+                              'Steel Frame Design',
+                              textStyle: AppTextStyles.montserratStyle(
+                                color: Colors.lightBlue,
+                              ),
+                            ),
+                            TyperAnimatedText(
+                              'Gesso',
+                              textStyle: AppTextStyles.montserratStyle(
+                                color: Colors.lightBlue,
+                              ),
+                            ),
+                          ],
+                          pause: const Duration(milliseconds: 1000),
+                          displayFullTextOnTap: true,
+                          stopPauseOnTap: true,
+                        ),
                       ],
+                    ),
+                    Constants.sizedBox(height: 15),
+                    SizedBox(
+                      width: size.width * 0.5,
+                      child: Text(
+                        'Em São Sebastião do Paraíso, conte com um gesseiro de confiança para seus projetos em drywall. Executo divisórias, forros, sancas e muito mais com eficiência, excelência e o padrão de qualidade que você merece.',
+                        style: AppTextStyles.normalStyle(),
+                      ),
                     ),
                   ],
                 ),
