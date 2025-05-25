@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_felix/globals/app_colors.dart';
@@ -5,6 +6,7 @@ import 'package:portfolio_felix/globals/app_colors.dart';
 import '../globals/app_assets.dart';
 import '../globals/app_text_style.dart';
 import '../globals/constants.dart';
+import '../widgets/profile_animation.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -37,81 +39,106 @@ class HomePage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.only(
-          top: size.height * 0.3,
-          left: size.width * 0.2,
-          right: size.width * 0.2,
+          top: size.height * 0.05,
+          left: size.width * 0.1,
+          right: size.width * 0.1,
         ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Olá, sou ',
-                      style: AppTextStyles.montserratStyle(color: Colors.white),
-                    ),
-                    Constants.sizedBox(height: 15),
-                    Text('Neemias Felix', style: AppTextStyles.headingStyles()),
-                    Constants.sizedBox(height: 15),
-                    Row(
-                      children: [
-                        Text(
-                          'E presto serviços em ',
-                          style: AppTextStyles.montserratStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                        AnimatedTextKit(
-                          animatedTexts: [
-                            TyperAnimatedText(
-                              'Dry Wall',
-                              textStyle: AppTextStyles.montserratStyle(
-                                color: Colors.lightBlue,
-                              ),
-                            ),
-                            TyperAnimatedText(
-                              'Steel Frame Design',
-                              textStyle: AppTextStyles.montserratStyle(
-                                color: Colors.lightBlue,
-                              ),
-                            ),
-                            TyperAnimatedText(
-                              'Gesso',
-                              textStyle: AppTextStyles.montserratStyle(
-                                color: Colors.lightBlue,
-                              ),
-                            ),
-                          ],
-                          pause: const Duration(milliseconds: 1000),
-                          displayFullTextOnTap: true,
-                          stopPauseOnTap: true,
-                        ),
-                      ],
-                    ),
-                    Constants.sizedBox(height: 15),
-                    SizedBox(
-                      width: size.width * 0.5,
+                    FadeInDown(
+                      duration: const Duration(milliseconds: 1200),
                       child: Text(
-                        'Em São Sebastião do Paraíso, conte com um gesseiro de confiança para seus projetos em drywall. Executo divisórias, forros, sancas e muito mais com eficiência, excelência e o padrão de qualidade que você merece.',
-                        style: AppTextStyles.normalStyle(),
+                        'Olá, sou ',
+                        style: AppTextStyles.montserratStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    Constants.sizedBox(height: 15),
+                    FadeInRight(
+                      duration: const Duration(milliseconds: 1400),
+                      child: Text(
+                        'Neemias Felix',
+                        style: AppTextStyles.headingStyles(),
+                      ),
+                    ),
+                    Constants.sizedBox(height: 15),
+                    FadeInLeft(
+                      duration: const Duration(milliseconds: 1400),
+                      child: Row(
+                        children: [
+                          Text(
+                            'E presto serviços em ',
+                            style: AppTextStyles.montserratStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                          AnimatedTextKit(
+                            animatedTexts: [
+                              TyperAnimatedText(
+                                'Dry Wall',
+                                textStyle: AppTextStyles.montserratStyle(
+                                  color: Colors.lightBlue,
+                                ),
+                              ),
+                              TyperAnimatedText(
+                                'Steel Frame Design',
+                                textStyle: AppTextStyles.montserratStyle(
+                                  color: Colors.lightBlue,
+                                ),
+                              ),
+                              TyperAnimatedText(
+                                'Gesso',
+                                textStyle: AppTextStyles.montserratStyle(
+                                  color: Colors.lightBlue,
+                                ),
+                              ),
+                            ],
+                            pause: const Duration(milliseconds: 1000),
+                            displayFullTextOnTap: true,
+                            stopPauseOnTap: true,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Constants.sizedBox(height: 15),
+                    FadeInDown(
+                      duration: const Duration(milliseconds: 1600),
+                      child: SizedBox(
+                        width: size.width * 0.5,
+                        child: Text(
+                          'Em São Sebastião do Paraíso, conte com um gesseiro de confiança para seus projetos em drywall. Executo divisórias, forros, sancas e muito mais com eficiência, excelência e o padrão de qualidade que você merece.',
+                          style: AppTextStyles.normalStyle(),
+                        ),
                       ),
                     ),
                     Constants.sizedBox(height: 22),
-                    Row(
-                      children: [
-                        buildSocialButton(imageAsset: AppAssets.facebook),
-                        Constants.sizedBox(width: 12),
-                        buildSocialButton(imageAsset: AppAssets.instagram),
-                        Constants.sizedBox(width: 12),
-                        buildSocialButton(imageAsset: AppAssets.whatsapp),
-                      ],
+                    FadeInUp(
+                      duration: const Duration(milliseconds: 1800),
+                      child: Row(
+                        children: [
+                          buildSocialButton(imageAsset: AppAssets.facebook),
+                          Constants.sizedBox(width: 12),
+                          buildSocialButton(imageAsset: AppAssets.instagram),
+                          Constants.sizedBox(width: 12),
+                          buildSocialButton(imageAsset: AppAssets.whatsapp),
+                        ],
+                      ),
                     ),
                   ],
                 ),
+                const ProfileAnimation(),
               ],
             ),
+            const SizedBox(height: 400),
           ],
         ),
       ),
