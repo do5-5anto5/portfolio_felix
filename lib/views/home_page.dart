@@ -3,6 +3,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_felix/globals/app_colors.dart';
 import 'package:portfolio_felix/views/about_me.dart';
+import 'package:portfolio_felix/views/my_services.dart';
 
 import '../globals/app_assets.dart';
 import '../globals/app_text_style.dart';
@@ -140,7 +141,8 @@ class HomePage extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 220),
-            AboutMe()
+            const AboutMe(),
+            const MyServices()
           ],
         ),
       ),
