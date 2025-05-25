@@ -2,6 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_felix/globals/app_colors.dart';
 
+import '../globals/app_assets.dart';
 import '../globals/app_text_style.dart';
 import '../globals/constants.dart';
 
@@ -97,11 +98,47 @@ class HomePage extends StatelessWidget {
                         style: AppTextStyles.normalStyle(),
                       ),
                     ),
+                    Constants.sizedBox(height: 22),
+                    Row(
+                      children: [
+                        buildSocialButton(imageAsset: AppAssets.facebook),
+                        Constants.sizedBox(width: 12),
+                        buildSocialButton(imageAsset: AppAssets.instagram),
+                        Constants.sizedBox(width: 12),
+                        buildSocialButton(imageAsset: AppAssets.whatsapp),
+                      ],
+                    ),
                   ],
                 ),
               ],
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Ink buildSocialButton({required String imageAsset}) {
+    return Ink(
+      width: 45,
+      height: 45,
+      decoration: BoxDecoration(
+        border: Border.all(color: AppColors.themeColor, width: 2.0),
+        color: AppColors.bgColor,
+        shape: BoxShape.circle,
+      ),
+      padding: const EdgeInsets.all(6),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(500.0),
+        splashColor: AppColors.aqua,
+        hoverColor: AppColors.mCyan,
+        onTap: () {},
+        child: Image.asset(
+          imageAsset,
+          width: 10,
+          height: 12,
+          color: AppColors.themeColor,
+          fit: BoxFit.fill,
         ),
       ),
     );
