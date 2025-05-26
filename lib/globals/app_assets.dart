@@ -6,4 +6,11 @@ class AppAssets {
   static String house = 'assets/images/house.png';
   static String business = 'assets/images/business.png';
   static String building = 'assets/images/building.png';
+  static String share = 'assets/images/share.png';
+  static String forro_sancaaberta_cortes = 'assets/images/work_forro_sanca_aberta_cortes_iluminacao.png';
+  static String divisorias = 'assets/images/work_divisorias.png';
+  static String estrutura_complexa = 'assets/images/work_estrutura_complexa.png';
+  static String fachada_glasroc = 'assets/images/work_fachada_glasroc.png';
+  static String forro_sanca_fechada = 'assets/images/work_forro_sanca_fechada.png';
+  static String parede_molduras_3d = 'assets/images/work_parede_molduras_3d.png';
 }
