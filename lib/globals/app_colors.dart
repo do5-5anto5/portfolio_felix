@@ -8,4 +8,5 @@ class AppColors {
   static Color aqua = const Color(0xff007A74);
   static Color mCyan = const Color(0xff00fce7);
   static Color robinEdgeBlue = const Color(0xff00CCCC);
+  static Color white = const Color(0xffffffff);
 }
