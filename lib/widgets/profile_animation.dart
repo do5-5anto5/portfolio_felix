@@ -23,8 +23,8 @@ class _ProfileAnimationState extends State<ProfileAnimation>
     )..repeat(reverse: true);
 
     _animation = Tween(
-      begin: Offset.zero,
-      end: const Offset(0.0, 0.3),
+      begin: Offset(0,0.08),
+      end: const Offset(0.0, 0),
     ).animate(_controller);
   }
 
