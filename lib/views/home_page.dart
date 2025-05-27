@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../globals/app_assets.dart';
 import '../globals/app_colors.dart';
@@ -22,6 +23,32 @@ class _HomePageState extends State<HomePage> {
     AppAssets.instagram,
     AppAssets.whatsapp
   ];
+
+  final socialButtonUrls = <String> [
+    'https://www.facebook.com/profile.php?id=100073703257147',
+    'https://www.instagram.com/neemiasfelix93/',
+    'https://wa.me/553588543466'
+  ];
+
+  Future<void> _launchWebUrl(String url) async {
+    final Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      if (!await launchUrl(uri, mode: LaunchMode.platformDefault)) {
+        _showErrorSnackBar(uri.host);
+      }
+    } else {
+      _showErrorSnackBar(uri.host);
+    }
+  }
+
+  void _showErrorSnackBar(String host) {
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Não foi possível abrir o link para $host')),
+      );
+    }
+    debugPrint('Could not launch $host');
+  }
 
   int? socialBI;
 
@@ -128,7 +155,9 @@ class _HomePageState extends State<HomePage> {
                   Constants.sizedBox(width: 8.0),
               itemBuilder: (context, index) {
                 return InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    _launchWebUrl(socialButtonUrls[index]);
+                  },
                   onHover: (value) {
                     setState(() {
                       if (value) {
