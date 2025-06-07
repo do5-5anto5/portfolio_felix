@@ -39,6 +39,7 @@ dependencies:
   animate_do: ^4.2.0
   scrollable_positioned_list: ^0.3.8
   url_launcher: ^6.3.1
+  firebase_core: ^3.13.1
 
 dev_dependencies:
   flutter_test:
