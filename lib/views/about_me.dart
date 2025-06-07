@@ -17,8 +17,6 @@ class AboutMe extends StatelessWidget {
       mobile: Column(
         children: [
           buildAboutMeContents(),
-          Constants.sizedBox(height: 35.0),
-          buildProfilePicture(),
         ],
       ),
       tablet: Row(
@@ -48,9 +46,9 @@ class AboutMe extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20.0),
         child: Image.asset(
-          AppAssets.profile,
-          width: 450,
-          height: 450,
+          AppAssets.profile2,
+          width: 500,
+          height: 300,
           fit: BoxFit.cover,
         ),
       ),

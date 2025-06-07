@@ -30,8 +30,8 @@ class _ProfileAnimationState extends State<ProfileAnimation>
 
   @override
   void dispose() {
-    super.dispose();
     _controller.dispose();
+    super.dispose();
   }
 
   @override
@@ -44,7 +44,7 @@ class _ProfileAnimationState extends State<ProfileAnimation>
           AppAssets.profile,
           width: 300,
           height: 150,
-          fit: BoxFit.cover,
+          fit: BoxFit.fill,
         ),
       ),
     );
