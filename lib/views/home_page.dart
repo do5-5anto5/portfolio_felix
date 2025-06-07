@@ -113,6 +113,13 @@ class _HomePageState extends State<HomePage> {
                 'E presto serviços em ',
                 style: AppTextStyles.montserratStyle(color: Colors.white),
               ),
+            ],
+          ),
+        ),
+        FadeInLeft(
+          duration: const Duration(milliseconds: 1400),
+          child: Row(
+            children: [
               AnimatedTextKit(
                 animatedTexts: [
                   TyperAnimatedText(
