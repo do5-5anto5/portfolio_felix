@@ -95,7 +95,15 @@ class _MyPortfolioState extends State<MyPortfolio> {
         return FadeInUpBig(
           duration: const Duration(milliseconds: 1600),
           child: InkWell(
-            onTap: () {},
+            onTap: () {
+              setState(() {
+                if (hoveredIndex == index) {
+                  hoveredIndex = null;
+                } else {
+                  hoveredIndex = index;
+                }
+              });
+            },
             onHover: (value) {
               setState(() {
                 if (value) {
